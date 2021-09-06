@@ -1,29 +1,23 @@
 const express = require('express');
 const mongoose = require('mongoose');
-
+const bodyParser = require('body-parser');
 const app = express();
 
-
 // DB Connection
-mongoose.connect('connection string', () => {
+const connectionString = "mongodb+srv://TestNodeServerlet:lalana1011@cluster0.kdc6q.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+mongoose.connect(connectionString, { useNewUrlParser: true, useUnifiedTopology: true } ,() => {
      console.log('DB connected');
 })
 
+// API Routes
+const paymentRoutes = require('./routes/routes');
+
+
 // Middleware
-app.use('/payment', () => {
-     console.log('Validate Payment')
-})
-
-
-// Routes
-app.get('/',(req, res) => {
-     res.send('Payment gateway');
-});
-
-app.get('/payment',(req, res) => {
-     res.send('Payment Done');
-});
+app.use(bodyParser.json());
+app.use('/payment', paymentRoutes );
 
 
 
 app.listen(3000);
+
