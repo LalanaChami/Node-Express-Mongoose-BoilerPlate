@@ -1,0 +1,28 @@
+{
+  "name": "node-express-mongoose-boilerplate",
+  "version": "1.0.0",
+  "description": "simple node serverlet boilerplate",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "run serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LalanaChami/Node-Express-Mongoose-BoilerPlate.git"
+  },
+  "keywords": [
+    "node"
+  ],
+  "author": "Lalana Chamika",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LalanaChami/Node-Express-Mongoose-BoilerPlate/issues"
+  },
+  "homepage": "https://github.com/LalanaChami/Node-Express-Mongoose-BoilerPlate#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongoose": "^6.0.4",
+    "nodemon": "^2.0.12"
+  }
+}
